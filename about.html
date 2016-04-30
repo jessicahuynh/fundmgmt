@@ -1,0 +1,127 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company name :: about</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  
+  <body> 
+   
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <!-- off-canvas title bar for 'small' screen -->
+        <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <span class="title-bar-title">LOGO</span>
+          </div>
+        </div>
+
+        <!-- off-canvas left menu -->
+        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+          <ul class="vertical menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <!-- "wider" top-bar menu for 'medium' and up -->
+        <div id="widemenu" class="top-bar">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">LOGO</li>
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="about.html">About</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="strategy.html">Strategy</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- original content goes in this container -->
+      <div class="off-canvas-content" id="aboutPage" data-off-canvas-content>
+        
+        <div class="mainBlock">
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="callout">
+                <h1>About</h1>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="large-4 columns">
+              <div class="warning callout">
+              we're a really cool company
+              </div>
+            </div>
+            
+            <div class="large-8 columns">
+              <div class="primary callout">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. 
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <footer>
+        <ul class="menu simple">
+          <li>&copy; company 2016</li>
+          <li>address</li>
+          <li>phone number</li>
+        </ul>
+      </footer>
+    <!-- close wrapper, no more content after this -->
+    </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation.min.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+      
+      heightsToStickFooter();
+      
+      $(window).on('resize', function() {
+        heightsToStickFooter();
+      });
+      
+      function heightsToStickFooter() {
+        var h = $('body').height();
+        $('.off-canvas-content').height(h - $('.title-bar').height() - $('.top-bar').height()  - $('footer').height()*1.4);
+
+      }
+      
+      $(window).on('scroll', function() {
+        var $sidebar   = $("#offCanvasLeft"), 
+            $window    = $(window),
+            offset     = $sidebar.offset(),
+            topPadding = 0;
+
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+                marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $sidebar.stop().animate({
+                marginTop: 0
+            });
+        } 
+      });
+    </script>  
+  </body>
+</html>

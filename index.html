@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company name :: welcome</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  
+  <body> 
+   
+    <div class="off-canvas-wrapper">
+      <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+        <!-- off-canvas title bar for 'small' screen -->
+        <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+          <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <span class="title-bar-title">LOGO</span>
+          </div>
+        </div>
+
+        <!-- off-canvas left menu -->
+        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+          <ul class="vertical menu">
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="strategy.html">Strategy</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+          </ul>
+        </div>
+
+        <!-- "wider" top-bar menu for 'medium' and up -->
+        <div id="widemenu" class="top-bar">
+          <div class="top-bar-left">
+            <ul class="menu">
+              <li class="menu-text">LOGO</li>
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="team.html">Team</a></li>
+              <li><a href="strategy.html">Strategy</a></li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+
+      <!-- original content goes in this container -->
+      <div class="off-canvas-content" id="indexPage" data-off-canvas-content>
+        
+        <div class="mainBlock">
+          <div class="row column">
+            <div class="large-6 large-offset-2 columns">
+              <div class="primary callout">
+                <h1>Company</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="row column">
+            <div class="large-4 large-offset-7 columns">
+              <div class="callout"><p>blah blah</p></div>
+            </div>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <footer>
+        <ul class="menu simple">
+          <li>&copy; company 2016</li>
+          <li>address</li>
+          <li>phone number</li>
+        </ul>
+      </footer>
+    <!-- close wrapper, no more content after this -->
+    </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation.min.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+      
+      heightsToStickFooter();
+      
+      $(window).on('resize', function() {
+        heightsToStickFooter();
+      });
+      
+      function heightsToStickFooter() {
+        var h = $('body').height();
+        $('.off-canvas-content').height(h - $('.title-bar').height() - $('.top-bar').height()  - $('footer').height()*1.4);
+
+      }
+      
+      $(window).on('scroll', function() {
+        var $sidebar   = $("#offCanvasLeft"), 
+            $window    = $(window),
+            offset     = $sidebar.offset(),
+            topPadding = 0;
+
+        if ($window.scrollTop() > offset.top) {
+            $sidebar.stop().animate({
+                marginTop: $window.scrollTop() - offset.top + topPadding
+            });
+        } else {
+            $sidebar.stop().animate({
+                marginTop: 0
+            });
+        } 
+      });
+    </script>  
+  </body>
+</html>
