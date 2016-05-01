@@ -84,11 +84,16 @@ div.callout {
 }
 
 .mainBlock {
-	margin: 0 auto -4em; /* the bottom margin is the negative value of the footer's height */
+
 	position: relative;
     top: 50%;
     transform: translateY(-50%);
 	z-index:90;
+}
+
+.mainBlockLong {
+	top:0;
+	transform:none;
 }
 
 footer {
