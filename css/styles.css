@@ -17,7 +17,7 @@ html, body {
 }
 
 #aboutPage {
-	background:black url('../img/fiberopticglobe.jpg') no-repeat center center;
+	background:black url('../img/fiberopticglobe.jpg') no-repeat left center;
 }
 
 #teamPage {
