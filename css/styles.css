@@ -17,6 +17,18 @@ html, body {
 	background:white;
 }
 
+#teamPage {
+	background:purple;
+}
+
+#strategyPage {
+	background:green;
+}
+
+#contactPage {
+	background:red;
+}
+
 /* styles */
 
 div.off-canvas-content {
@@ -35,8 +47,24 @@ div.callout {
 	border:none;
 }
 
-.menu a:hover {
-	background:#ccc;
+@media screen and (min-width:40em) {
+	.menu a {
+		border-bottom:1px solid white;
+	}
+
+	.menu a:hover {
+		border-bottom:1px solid #258faf;
+	}
+
+	.menu li.active a {
+		border-bottom:1px solid #258faf;
+		color:#258faf;
+		background-color:transparent;
+	}
+
+	.top-bar, .top-bar ul {
+		background-color:white;
+	}
 }
 
 /* physical layout */
@@ -60,6 +88,7 @@ div.callout {
 	position: relative;
     top: 50%;
     transform: translateY(-50%);
+	z-index:90;
 }
 
 footer {
@@ -71,6 +100,7 @@ footer {
 	bottom:0;
 	background:black;
 	color:#555;
+	z-index:100;
 }
 
 .push { height:2em; }
