@@ -83,37 +83,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.1/foundation.min.js"></script>
-    <script type="text/javascript">
-      $(document).foundation();
-      
-      heightsToStickFooter();
-      
-      $(window).on('resize', function() {
-        heightsToStickFooter();
-      });
-      
-      function heightsToStickFooter() {
-        var h = $('body').height();
-        $('.off-canvas-content').height(h - $('.title-bar').height() - $('.top-bar').height()  - $('footer').height()*1.4);
-
-      }
-      
-      $(window).on('scroll', function() {
-        var $sidebar   = $("#offCanvasLeft"), 
-            $window    = $(window),
-            offset     = $sidebar.offset(),
-            topPadding = 0;
-
-        if ($window.scrollTop() > offset.top) {
-            $sidebar.stop().animate({
-                marginTop: $window.scrollTop() - offset.top + topPadding
-            });
-        } else {
-            $sidebar.stop().animate({
-                marginTop: 0
-            });
-        } 
-      });
-    </script>  
+    <script src="js/scripts.js"></script>   
   </body>
 </html>
